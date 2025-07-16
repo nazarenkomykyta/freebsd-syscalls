@@ -1,0 +1,13 @@
+[package]
+name = "freebsd-syscalls"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 0
+
