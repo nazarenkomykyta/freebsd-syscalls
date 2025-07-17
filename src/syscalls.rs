@@ -17,3 +17,46 @@ pub fn ___syscall_exit(_exit_c: _DWORD) {
         );
     }
 }
+
+pub fn ___syscall_sync() {
+    unsafe {
+        asm!(
+            "mov rax, {__syscall:r}",
+            "push rax",
+            "int 80h",
+            "add rsp, 8",
+            "ret",
+            __syscall = in(reg) _SYS_SYNC,
+            options(nostack)
+        );
+    }
+}
+
+pub fn ___syscall_shutdown() {
+    unsafe {
+        asm!(
+            "mov rax, {__syscall:r}",
+            "push rax",
+            "int 80h",
+            "add rsp, 8",
+            "ret",
+            __syscall = in(reg) _SYS_SHUTDOWN,
+            options(nostack)
+        );
+    }
+}
+
+pub fn ___syscall_reboot() {
+    unsafe {
+        asm!(
+            "mov rax, {__syscall:r}",
+            "push rax",
+            "int 80h",
+            "add rsp, 8",
+            "ret",
+            __syscall = in(reg) _SYS_REBOOT,
+            options(nostack)
+        );
+    }
+}
+
