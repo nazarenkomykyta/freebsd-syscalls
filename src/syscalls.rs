@@ -1,5 +1,6 @@
 use crate::table::*;
 use crate::types::*;
+use crate::sys::flags::*;
 use core::arch::asm;
 
 pub fn ___syscall_exit(_exit_c: _DWORD) {
@@ -46,15 +47,17 @@ pub fn ___syscall_shutdown() {
     }
 }
 
-pub fn ___syscall_reboot() {
+pub fn ___syscall_reboot(_reboot_f: _UINT64) {
     unsafe {
         asm!(
             "mov rax, {__syscall:r}",
+            "push {__flag:r}",
             "push rax",
             "int 80h",
-            "add rsp, 8",
+            "add rsp, 16",
             "ret",
             __syscall = in(reg) _SYS_REBOOT,
+            __flag = in(reg) _reboot_f,
             options(nostack)
         );
     }
