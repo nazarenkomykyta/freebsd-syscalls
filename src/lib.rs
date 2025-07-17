@@ -2,6 +2,7 @@
 pub mod table;
 pub mod syscalls;
 pub mod types;
+pub mod sys;
 
 #[cfg(test)]
 mod tests {
