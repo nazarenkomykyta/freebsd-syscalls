@@ -1,0 +1,29 @@
+// Flags for ___syscall_reboot(), don't change them
+
+pub const RB_AUTOBOOT: u64 = 0;
+pub const RB_ASKNAME: u64 = 0x001;
+pub const RB_SINGLE: u64 = 0x002;
+pub const RB_NOSYNC: u64 = 0x004;
+pub const RB_HALT: u64 = 0x008;
+pub const RB_INITNAME: u64 = 0x010;
+pub const RB_DFLTROOT: u64 = 0x020;
+pub const RB_KDB: u64 = 0x040;
+pub const RB_RDONLY: u64 = 0x080;
+pub const RB_DUMP: u64 = 0x100;
+pub const RB_MINIROOT: u64 = 0x200;
+pub const RB_VERBOSE: u64 = 0x800;
+pub const RB_SERIAL: u64 = 0x1000;
+pub const RB_CDROM: u64 = 0x2000;
+pub const RB_POWEROFF: u64 = 0x4000;
+pub const RB_GDB: u64 = 0x8000;
+pub const RB_MUTE: u64 = 0x10000;
+pub const RB_SELFTEST: u64 = 0x20000;
+pub const RB_RESERVED1: u64 = 0x40000;
+pub const RB_RESERVED2: u64 = 0x80000;
+pub const RB_PAUSE: u64 = 0x100000;
+pub const RB_REROOT: u64 = 0x200000;
+pub const RB_POWERCYCLE: u64 = 0x400000;
+pub const RB_MUTEMSGS: u64 = 0x800000;
+pub const RB_PROBE: u64 = 0x10000000;
+pub const PB_MULTIPLE: u64 = 0x2000000;
+pub const PB_BOOTINFO: u64 = 0x80000000;
